@@ -7,10 +7,7 @@
 #   Date: June 28, 2019
 #
 #      Arguments
-#      [1] = type of import
-#             m = multi-year
-#             s = single year
-#      [2] = windows directory location
+#      [1] =  windows directory location (cargo or trips folder)
 #
 #################################
 
@@ -22,20 +19,18 @@ from settings import conn_string
 from itertools import islice
 
 # check for necessary arguments before running
-if (len(sys.argv) < 3 or  len(sys.argv) > 3):
+if (len(sys.argv) < 2 or  len(sys.argv) > 2):
     print """\
-        ERROR: This script requires two arguments:
+        ERROR: This script requires one argument:
 
-        1 - type of import (m = multiple years or s = single year)
-        2 - source directory of files
+        1 - source directory of files (cargo or trip folder)
 
-        Usage: pports-cargo-importer.py <type> <directory>
+        Usage: pports-cargo-importer.py <directory>
         """
     sys.exit(1)
 
 #accept arguments from command line
-sourceType = sys.argv[1]
-path = sys.argv[2]
+path = sys.argv[1]
 
 # SQL statement for the two tables
 SQL_INSERT_CARGO = """
@@ -76,9 +71,9 @@ def parseAnnualData(annual_dir, type):
                         dom_shipment = row[9]
                         for_receipt = row[12]
                         for_shipment = row[13]
-                        print port, year, pub_group, dom_intraport, dom_receipt, dom_shipment, for_receipt, for_shipment
-                        # cur.execute(SQL_INSERT_CARGO, (port, year, pub_group, dom_intraport, dom_receipt, dom_shipment, for_receipt, for_shipment))
-                    # con.commit()
+                        # print port, year, pub_group, dom_intraport, dom_receipt, dom_shipment, for_receipt, for_shipment
+                        cur.execute(SQL_INSERT_CARGO, (port, year, pub_group, dom_intraport, dom_receipt, dom_shipment, for_receipt, for_shipment))
+                    con.commit()
             elif dataType == 'trips':
                 with open(root +'/' + file, 'r') as f:
                     data = csv.reader(islice(f, 2, None))
@@ -94,29 +89,16 @@ def parseAnnualData(annual_dir, type):
                             receipt_trip = row[i]
                             shipment_trip = row[i+1]
                             traffic_type = fieldNames[i]
-                            print port, year, receipt_trip, shipment_trip, traffic_type
-                            # cur.execute(SQL_INSERT_TRIPS, (port, year, receipt_trip, shipment_trip, traffic_type))
-                    # con.commit()
+                            # print port, year, receipt_trip, shipment_trip, traffic_type
+                            cur.execute(SQL_INSERT_TRIPS, (port, year, receipt_trip, shipment_trip, traffic_type))
+                    con.commit()
 
     return
 
-# check type of request and execute data parsing
-if sourceType == 'm':
-    # loop through all files 
-    d = os.path.basename(os.path.normpath( path ))
-    parseAnnualData(path, d)           
-elif sourceType == 's':
-    # loop through only one years files
-    d = os.path.basename(os.path.normpath( path ))
-    # print (d)
-    parseAnnualData(path, d)
-else:
-    print """\
-        ERROR: This script requires two arguments:
+# loop through all files in directory
+d = os.path.basename(os.path.normpath( path ))
+parseAnnualData(path, d)           
 
-        1 - type of data (m = multiple years or s = single year)
-        2 - source directory of files
 
-        Usage: pports-cargo-importer.py <type> <directory>
-        """
-    sys.exit(1)
+
+    # sys.exit(1)
