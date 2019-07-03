@@ -36,6 +36,12 @@ if (len(sys.argv) < 2 or  len(sys.argv) > 2):
 #accept arguments from command line
 path = sys.argv[1]
 
+
+# data cell clean-up
+def cleanValue( val ):
+    clean = val.replace('-','0').replace(',','').split('.')[0]
+    return clean
+
 # SQL statement for the two tables
 SQL_INSERT_ACTIVITY = """
 INSERT INTO pports_act(year, portid, domestic, import, export) 
@@ -53,7 +59,6 @@ archive = os.path.join(path,'archive')
 if not os.path.exists(archive):
     os.makedirs(archive)
 
-
 # parse the files
 for file in files:
     with open(os.path.join(path,file), 'r') as f:
@@ -63,9 +68,9 @@ for file in files:
         for row in data:
             if row:
                 portid = row[0]
-                domestic = row[5].replace('-','0').replace(',','').split('.')[0]
-                imports = row[7].replace('-','0').replace(',','').split('.')[0]
-                export = row[8].replace('-','0').replace(',','').split('.')[0]
+                domestic = cleanValue(row[5])
+                imports = cleanValue(row[7])
+                export = cleanValue(row[8])
                 cur.execute(SQL_INSERT_ACTIVITY, (year, portid, domestic, imports, export))
         print 'Principal Port activity for '+year+' added to database'
         con.commit()
