@@ -53,15 +53,18 @@ VALUES (
 con = psql.connect(conn_string)
 cur = con.cursor()
 
+
+
 # parse the files
-def parseAnnualData(annual_dir):
+def parseAnnualData(annual_dir, type):
     for root, dirs, files in os.walk( annual_dir ):
         for file in files:
-            dataType = os.path.basename(os.path.normpath( os.path.dirname(root )))
+            dataType = type
+            # print (dataType)
+            # print (d)
+            # port = os.path.basename(os.path.normpath( root ))
+            year = os.path.basename(os.path.splitext(file)[0])
             port = os.path.basename(os.path.normpath( root ))
-            year = os.path.realpath(file)
-            print (year)
-            # port = 'C201'
             if dataType == 'cargo':
                 with open(root +'/' + file, 'r') as f:
                     data = csv.reader(islice(f, 3, None))
@@ -73,6 +76,7 @@ def parseAnnualData(annual_dir):
                         dom_shipment = row[9]
                         for_receipt = row[12]
                         for_shipment = row[13]
+                        print port, year, pub_group, dom_intraport, dom_receipt, dom_shipment, for_receipt, for_shipment
                         # cur.execute(SQL_INSERT_CARGO, (port, year, pub_group, dom_intraport, dom_receipt, dom_shipment, for_receipt, for_shipment))
                     # con.commit()
             elif dataType == 'trips':
@@ -81,11 +85,11 @@ def parseAnnualData(annual_dir):
                     for row in data:
                         for i in range(5,6) + range(8,9) + range(11,12) + range(14,15) + range(17,18):
                             fieldNames = {
-                                5 : 'self-dry',
-                                8 : 'self-tanker',
-                                11 : 'self-towboat',
-                                14 : 'non-self-dry',
-                                17 : 'non-self-tanker'                             
+                                5 : '01',
+                                8 : '02',
+                                11 : '03',
+                                14 : '04',
+                                17 : '05'                             
                             }
                             receipt_trip = row[i]
                             shipment_trip = row[i+1]
@@ -98,29 +102,21 @@ def parseAnnualData(annual_dir):
 
 # check type of request and execute data parsing
 if sourceType == 'm':
-    # loop all multiple year directories 
-    dirs = os.listdir( path )
-    for d in dirs:
-        parseAnnualData(os.path.join(path, d))           
-elif sourceType == 's':
+    # loop through all files 
     d = os.path.basename(os.path.normpath( path ))
-    parseAnnualData(path)
+    parseAnnualData(path, d)           
+elif sourceType == 's':
+    # loop through only one years files
+    d = os.path.basename(os.path.normpath( path ))
+    # print (d)
+    parseAnnualData(path, d)
 else:
     print """\
         ERROR: This script requires two arguments:
 
-        1 - type of import (m = multiple years or s = single year)
+        1 - type of data (m = multiple years or s = single year)
         2 - source directory of files
 
         Usage: pports-cargo-importer.py <type> <directory>
         """
     sys.exit(1)
-
-dirs = os.listdir( path )
-print (dirs)
-d = os.path.basename(os.path.normpath( path ))
-print (d)
-t = os.path.basename(path)
-print(t)
-h = os.path.join(path, d)
-print (h)

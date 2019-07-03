@@ -59,10 +59,12 @@ cur = con.cursor()
 def parseAnnualData(annual_dir, year):
     for root, dirs, files in os.walk( annual_dir ):
         for file in files:
-            dataType = os.path.basename(os.path.normpath( os.path.dirname(file )))
-            #port = os.path.basename(os.path.normpath( root ))
-            #year = os.path.basename(os.path.normpath( root ))
-            port = 'C201'
+            dataType = os.path.basename(os.path.normpath( root ))
+            print (dataType)
+            print (d)
+            # port = os.path.basename(os.path.normpath( root ))
+            # year = os.path.basename(os.path.normpath( root ))
+            port = os.path.basename(os.path.splitext(file)[0][:5])
             if dataType == 'cargo':
                 with open(root +'/' + file, 'r') as f:
                     data = csv.reader(islice(f, 3, None))
@@ -83,11 +85,11 @@ def parseAnnualData(annual_dir, year):
                     for row in data:
                         for i in range(5,6) + range(8,9) + range(11,12) + range(14,15) + range(17,18):
                             fieldNames = {
-                                5 : 'self-dry',
-                                8 : 'self-tanker',
-                                11 : 'self-towboat',
-                                14 : 'non-self-dry',
-                                17 : 'non-self-tanker'                             
+                                5 : '01',
+                                8 : '02',
+                                11 : '03',
+                                14 : '04',
+                                17 : '05'                             
                             }
                             receipt_trip = row[i]
                             shipment_trip = row[i+1]
@@ -102,10 +104,12 @@ def parseAnnualData(annual_dir, year):
 if sourceType == 'm':
     # loop all multiple year directories 
     dirs = os.listdir( path )
+    print(dirs)
     for d in dirs:
         parseAnnualData(os.path.join(path, d), d)           
 elif sourceType == 's':
     d = os.path.basename(os.path.normpath( path ))
+    print (d)
     parseAnnualData(path, d)
 else:
     print """\
