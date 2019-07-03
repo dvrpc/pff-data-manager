@@ -53,28 +53,26 @@ VALUES (
 con = psql.connect(conn_string)
 cur = con.cursor()
 
-
-
 # parse the files
-def parseAnnualData(annual_dir, year):
+def parseAnnualData(annual_dir):
     for root, dirs, files in os.walk( annual_dir ):
         for file in files:
-            dataType = os.path.basename(os.path.normpath( os.path.dirname(file )))
-            #port = os.path.basename(os.path.normpath( root ))
-            #year = os.path.basename(os.path.normpath( root ))
-            port = 'C201'
+            dataType = os.path.basename(os.path.normpath( os.path.dirname(root )))
+            port = os.path.basename(os.path.normpath( root ))
+            year = os.path.realpath(file)
+            print (year)
+            # port = 'C201'
             if dataType == 'cargo':
                 with open(root +'/' + file, 'r') as f:
                     data = csv.reader(islice(f, 3, None))
                     for row in data:
-                        print row
+                        # print row
                         pub_group = row[0]
                         dom_intraport = row[7]
                         dom_receipt = row[8]
                         dom_shipment = row[9]
                         for_receipt = row[12]
                         for_shipment = row[13]
-                        print port, year, pub_group, dom_intraport, dom_receipt, dom_shipment, for_receipt, for_shipment
                         # cur.execute(SQL_INSERT_CARGO, (port, year, pub_group, dom_intraport, dom_receipt, dom_shipment, for_receipt, for_shipment))
                     # con.commit()
             elif dataType == 'trips':
@@ -103,10 +101,10 @@ if sourceType == 'm':
     # loop all multiple year directories 
     dirs = os.listdir( path )
     for d in dirs:
-        parseAnnualData(os.path.join(path, d), d)           
+        parseAnnualData(os.path.join(path, d))           
 elif sourceType == 's':
     d = os.path.basename(os.path.normpath( path ))
-    parseAnnualData(path, d)
+    parseAnnualData(path)
 else:
     print """\
         ERROR: This script requires two arguments:
@@ -117,3 +115,12 @@ else:
         Usage: pports-cargo-importer.py <type> <directory>
         """
     sys.exit(1)
+
+dirs = os.listdir( path )
+print (dirs)
+d = os.path.basename(os.path.normpath( path ))
+print (d)
+t = os.path.basename(path)
+print(t)
+h = os.path.join(path, d)
+print (h)
