@@ -1,0 +1,107 @@
+locationId,locationType,name,regionId
+4730,PORT,"Anacortes, WA",4
+4820,PORT,"Anchorage, AK",4
+4610,PORT,"Astoria, OR",4
+4949,PORT,"Atka Island, AK",4
+4457,PORT,"Barbers Point Harbor, Oahu, HI",4
+4732,PORT,"Bellingham, WA",4
+4346,PORT,"Berkeley, CA",4
+4847,PORT,"Bethel, AK",4
+4744,PORT,"Blaine, WA",4
+4392,PORT,"Bodega Bay, CA",4
+4660,PORT,"Coos Bay, OR",4
+4814,PORT,"Cordova, AK",4
+4834,PORT,"Craig, AK",4
+4380,PORT,"Crescent City, CA",4
+4846,PORT,"Dillingham, AK",4
+4811,PORT,"Douglas Harbor, AK",4
+4871,PORT,"Dry Pass, AK",4
+4872,PORT,"Egegik River, AK",4
+4838,PORT,"Elfin Cove Harbor, AK",4
+4725,PORT,"Everett, WA",4
+4734,PORT,"Flathead Lake, MT",4
+4702,PORT,"Grays Harbor, WA",4
+4470,PORT,"Hana Harbor, Maui, HI",4
+4400,PORT,"Hilo, HI",4
+4844,PORT,"Homer, AK",4
+4420,PORT,"Honolulu, HI",4
+4813,PORT,"Hoonah, AK",4
+4942,PORT,"Humboldt, AK",4
+4375,PORT,"Humboldt, CA",4
+4909,PORT,"Iliuliuk Harbor, AK",4
+4810,PORT,"Juneau, AK",4
+4410,PORT,"Kahului, Maui, HI",4
+4475,PORT,"Kailua, Ohau, Hi",4
+4805,PORT,"Kake, AK",4
+4626,PORT,"Kalama, WA",4
+4460,PORT,"Kalaupapa Harbor, Molokai, HI",4
+4415,PORT,"Kaunakakai, Molokai, HI",4
+4405,PORT,"Kawaihae Harbor, HI",4
+4800,PORT,"Ketchikan, AK",4
+4944,PORT,"King Cove, AK",4
+4978,PORT,"Kivilina, AK",4
+4934,PORT,"Kodiak, AK",4
+4749,PORT,"Lake Crockett, WA",4
+4110,PORT,"Long Beach, CA",4
+4622,PORT,"Longview, WA",4
+4120,PORT,"Los Angeles, CA",4
+4832,PORT,"Metlakatla, AK",4
+4130,PORT,"Mission Bay, CA",4
+4325,PORT,"Monterey Harbor, CA",4
+4138,PORT,"Morro Bay, CA",4
+4330,PORT,"Moss Landing, CA",4
+4430,PORT,"Nawiliwili, Kauai, HI",4
+4706,PORT,"Neah Bay, WA",4
+4132,PORT,"Newport Bay Harbor, CA",4
+4831,PORT,"Nikishka, AK",4
+4841,PORT,"Ninilchik, AK",4
+4968,PORT,"Nome, AK",4
+4345,PORT,"Oakland, CA",4
+4198,PORT,"Oceanside Harbor, CA",4
+4933,PORT,"Old Harbor, AK",4
+4718,PORT,"Olympia, WA",4
+4450,PORT,"Pearl Harbor, Oahu, HI",4
+4840,PORT,"Pelican, AK",4
+4806,PORT,"Petersburg, AK",4
+4386,PORT,"Pillar Point Harbor, CA",4
+4836,PORT,"Port Alexander, AK",4
+4425,PORT,"Port Allen Harbor, Kauai, HI",4
+4708,PORT,"Port Angeles, WA",4
+4714,PORT,"Port Gamble, WA",4
+4150,PORT,"Port Hueneme, CA",4
+4688,PORT,"Port Orford, OR",4
+4710,PORT,"Port Townsend, WA",4
+4612,PORT,"Portland, Astoria, St. Helens, Longview, Vancouver and Kalama Area, Other Ports",4
+4644,PORT,"Portland, OR",4
+4754,PORT,"Puget Sound Area, WA, Other Ports",4
+4134,PORT,"Redondo Beach, CA",4
+4340,PORT,"Redwood City, CA",4
+4350,PORT,"Richmond, CA",4
+4240,PORT,"Sacramento, CA",4
+4100,PORT,"San Diego, CA",4
+4389,PORT,"San Francisco Bay Area, CA, Other Ports",4
+4335,PORT,"San Francisco, CA",4
+4385,PORT,"San Leandro Marina, CA",4
+4136,PORT,"Santa Barbara, CA",4
+4396,PORT,"Santa Cruz, CA",4
+4722,PORT,"Seattle, WA",4
+4842,PORT,"Seldovia, AK",4
+4930,PORT,"Seward, AK",4
+4808,PORT,"Sitka, AK",4
+4812,PORT,"Skagway, AK",4
+4628,PORT,"St. Helens, OR",4
+4874,PORT,"Stikine River, AK",4
+4270,PORT,"Stockton, CA",4
+4720,PORT,"Tacoma, WA",4
+4674,PORT,"Tillamook Bay and Bar, OR",4
+8901,PORT,"Total Waterborne Commerce of the San Francisco Bay and Delta Areas, CA",4
+8902,PORT,"Total Waterborne Commerce, Columbia River Basin, OR, WA, and ID",4
+4947,PORT,"Unalaska Island, AK",4
+4818,PORT,"Valdez Harbor (Small Boat Harbor), AK",4
+4816,PORT,"Valdez, AK",4
+4636,PORT,"Vancouver, WA",4
+4435,PORT,"Wake Island Harbor, Wake Island",4
+4440,PORT,"Wells Harbor, Midway Island",4
+4822,PORT,"Whittier, AK",4
+4700,PORT,"Willapa, WA",4
+4802,PORT,"Wrangell, AK",4

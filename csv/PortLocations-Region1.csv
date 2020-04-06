@@ -1,0 +1,508 @@
+locationId,locationType,name,regionId,year
+656,WATERWAY,"Aberdeen Creek, VA",1,2017
+293,WATERWAY,"Absecon Creek, NJ",1,2017
+279,WATERWAY,"Absecon Inlet, NJ",1,2017
+505,PORT,"Albany, NY",1,2017
+718,PORT,"Alexandria, VA",1,2017
+266,WATERWAY,"Alloway Creek, NJ",1,2017
+882,WATERWAY,"Altamaha River, GA",1,2017
+715,PORT,"Anacostia River, DC",1,2017
+1295,WATERWAY,"Andrews River, MA",1,2017
+727,PORT,"Annapolis, MD",1,2017
+36,WATERWAY,"Annisquam River, MA",1,2017
+668,WATERWAY,"Appomattox River, VA",1,2017
+194,PORT,"Apponaug Cove, RI",1,2017
+247,WATERWAY,"Appoquinimink River, DE",1,2017
+456,WATERWAY,"Aquia Creek, VA",1,2017
+860,WATERWAY,"Ashley River, SC",1,2017
+785,PORT,"Atlantic Beach Channels, NC",1,2017
+5600,WATERWAY,"Atlantic Intracoastal Waterway (Consolidated Report) between Norfolk, VA and the St. Johns River, FL",1,2017
+5690,WATERWAY,"Atlantic Intracoastal Waterway between Norfolk, VA, and the St. Johns River , FL (Savannah District)",1,2017
+5671,WATERWAY,"Atlantic Intracoastal Waterway between Norfolk, VA, and the St. Johns River FL (Norfolk District) via Great Bridge Lock Route",1,2017
+5672,WATERWAY,"Atlantic Intracoastal Waterway between Norfolk, VA, and the St. Johns River FL Dismal Swamp and Pasquotank River",1,2017
+5685,WATERWAY,"Atlantic Intracoastal Waterway between Norfolk, VA, and the St. Johns River, FL (Charleston District)",1,2017
+5695,WATERWAY,"Atlantic Intracoastal Waterway between Norfolk, VA, and the St. Johns River, FL (Jacksonville District)",1,2017
+5680,WATERWAY,"Atlantic Intracoastal Waterway between Norfolk, VA, and the St. Johns River, FL (Wilmington District)",1,2017
+770,PORT,"Avon, NC",1,2017
+491,PORT,"Back Creek, Anne Arundel County, MD",1,2017
+842,WATERWAY,"Back Sound to Lookout Bight, NC, Channel",1,2017
+2110,WATERWAY,"Bakers Haulover Inlet, FL",1,2017
+700,PORT,"Baltimore, MD",1,2017
+105,PORT,"Bar Harbor, ME",1,2017
+284,WATERWAY,"Barnegat Inlet, NJ",1,2017
+108,PORT,"Bass Harbor, ME",1,2017
+362,PORT,"Bay Ridge and Red Hook Channels, NY",1,2017
+828,WATERWAY,"Bay River, NC",1,2017
+676,WATERWAY,"Beach Creek, VA",1,2017
+102,PORT,"Beals Harbor, ME",1,2017
+763,PORT,"Beaufort, NC",1,2017
+115,PORT,"Belfast, ME",1,2017
+761,PORT,"Belhaven, NC",1,2017
+887,PORT,"Betterton, MD",1,2017
+145,PORT,"Beverly, MA",1,2017
+259,WATERWAY,"Big Timber Creek, NJ",1,2017
+434,PORT,"Bivalve, MD",1,2017
+709,PORT,"Black Walnut Harbor, MD",1,2017
+199,PORT,"Block Island, RI, Harbor of Refuge",1,2017
+802,WATERWAY,"Bogue Inlet, NC, Channel to",1,2017
+1239,PORT,"Bonum Creek, VA",1,2017
+125,PORT,"Boothbay Harbor, ME",1,2017
+149,PORT,"Boston, MA",1,2017
+150,PORT,"Boston, MA Main Waterfront",1,2017
+1323,PORT,"Bourne, MA",1,2017
+308,PORT,"Branford, CT",1,2017
+471,WATERWAY,"Bransons Cove, VA",1,2017
+463,WATERWAY,"Breton Bay, MD",1,2017
+311,PORT,"Bridgeport, CT",1,2017
+190,PORT,"Bristol, RI",1,2017
+435,WATERWAY,"Broad Creek River, DE",1,2017
+445,WATERWAY,"Broad Creek, Somerset County, MD",1,2017
+641,WATERWAY,"Broad Creek, VA",1,2017
+239,WATERWAY,"Broadkill River, DE",1,2017
+485,WATERWAY,"Broadwater Creek, MD",1,2017
+353,PORT,"Bronx River, NY",1,2017
+224,WATERWAY,"Browns Creek, NY",1,2017
+780,PORT,"Brunswick, GA",1,2017
+110,PORT,"Bucksport, ME",1,2017
+1023,PORT,"Bunker, ME",1,2017
+509,PORT,"Burlington, VT",1,2017
+359,PORT,"Buttermilk Channel, NY",1,2017
+489,WATERWAY,"Cadle Creek, MD",1,2017
+711,PORT,"Cambridge, MD",1,2017
+116,PORT,"Camden, ME",1,2017
+551,PORT,"Camden-Gloucester, NJ",1,2017
+43,WATERWAY,"Canapitsit Channel, MA",1,2017
+732,PORT,"Cape Charles, VA",1,2017
+171,WATERWAY,"Cape Cod Canal, MA",1,2017
+843,WATERWAY,"Cape Fear River above Wilmington, NC",1,2017
+5073,WATERWAY,"Cape May Canal, NJ",1,2017
+131,PORT,"Cape Porpoise, ME",1,2017
+636,WATERWAY,"Carters Creek, VA",1,2017
+1269,PORT,"Carvers Harbor, ME",1,2017
+812,WATERWAY,"Cashie River, NC",1,2017
+773,PORT,"Charleston, SC",1,2017
+175,PORT,"Chatham, MA",1,2017
+379,WATERWAY,"Cheesequake Creek, NJ",1,2017
+152,PORT,"Chelsea River, MA",1,2017
+248,WATERWAY,"Chesapeake and Delaware Canal, DE and MD",1,2017
+295,WATERWAY,"Chesconessex Creek, VA",1,2017
+409,WATERWAY,"Chester River, MD",1,2017
+297,PORT,"Chester, PA",1,2017
+730,WATERWAY,"Chincoteague Bay, MD and VA",1,2017
+1334,PORT,"Chincoteague, VA Harbor of Refuge, VA",1,2017
+423,WATERWAY,"Choptank River, MD",1,2017
+808,WATERWAY,"Chowan River, NC",1,2017
+707,PORT,"Claiborne, MD",1,2017
+306,PORT,"Clinton, CT",1,2017
+477,WATERWAY,"Coan River, VA",1,2017
+100,WATERWAY,"Cobscook Bay, ME",1,2017
+267,WATERWAY,"Cohansey River, NJ",1,2017
+166,PORT,"Cohasset, MA",1,2017
+274,WATERWAY,"Cold Spring Inlet, NJ",1,2017
+365,WATERWAY,"Coney Island Channel, NY",1,2017
+364,PORT,"Coney Island Creek, NY",1,2017
+56,WATERWAY,"Connecticut River Below Hartford, CT",1,2017
+258,WATERWAY,"Cooper River, NJ",1,2017
+103,PORT,"Corea Harbor, ME",1,2017
+410,WATERWAY,"Corsica River, MD",1,2017
+617,WATERWAY,"Cranes Creek, VA",1,2017
+114,PORT,"Criehaven, ME",1,2017
+712,PORT,"Crisfield, MD",1,2017
+42,WATERWAY,"Cross Rip Shoals, Nantucket Sound, MA",1,2017
+1333,WATERWAY,"Cuckold Creek, MD",1,2017
+185,PORT,"Cuttyhunk Harbor, MA",1,2017
+15,WATERWAY,"Damariscotta River, ME",1,2017
+778,PORT,"Darien, GA",1,2017
+645,WATERWAY,"Davis Creek, VA",1,2017
+440,WATERWAY,"Deal Island, MD Lower Thoroughfare at or near Wenona",1,2017
+439,WATERWAY,"Deal Island, MD Upper Thoroughfare",1,2017
+603,PORT,"Deep Creek, Accomack County, VA",1,2017
+660,WATERWAY,"Deep Creek, Newport News, VA",1,2017
+600,WATERWAY,Delaware Bay - Chesapeake Bay Waterway - Virginia Portion,1,2017
+238,PORT,"Delaware Bay, DE, Harbor of Refuge",1,2017
+5232,WATERWAY,"Delaware River Between Philadelphia, PA, and Trenton, NJ",1,2017
+5250,WATERWAY,"Delaware River, Philadelphia, PA to the Sea",1,2017
+5200,WATERWAY,"Delaware River, Trenton, NJ to the Sea (Consolidated Report)",1,2017
+160,PORT,"Dorchester Bay, MA",1,2017
+836,WATERWAY,"Drum Inlet, NC",1,2017
+429,WATERWAY,"Duck Point Cove, MD",1,2017
+168,PORT,"Duxbury, MA",1,2017
+620,WATERWAY,"Dymers Creek, VA",1,2017
+348,PORT,"East Chester Creek, NY",1,2017
+351,PORT,"East River, NY",1,2017
+201,WATERWAY,"East Rockaway Inlet, NY",1,2017
+101,PORT,"Eastport, ME",1,2017
+2105,PORT,"Eau Gallie, FL",1,2017
+345,PORT,"Echo Bay Harbor, NY",1,2017
+760,PORT,"Edenton, NC",1,2017
+184,PORT,"Edgartown, MA",1,2017
+391,PORT,"Elizabeth River, NJ",1,2017
+405,WATERWAY,"Elk and Little Elk Rivers, MD",1,2017
+35,WATERWAY,"Essex River, MA",1,2017
+189,PORT,"Fall River, MA",1,2017
+177,PORT,"Falmouth, MA",1,2017
+822,WATERWAY,"Far Creek, NC",1,2017
+784,PORT,"Fernandina Beach, FL",1,2017
+220,WATERWAY,"Fire Island Inlet, NY",1,2017
+431,WATERWAY,"Fishing Bay Tributaries, Dorchester County, MD",1,2017
+483,WATERWAY,"Fishing Creek, Calvert County, MD",1,2017
+320,PORT,"Fivemile River Harbor, CT",1,2017
+354,PORT,"Flushing Bay and Creek, NY",1,2017
+2161,PORT,"Fort Pierce, FL",1,2017
+158,PORT,"Fort Point Channel, MA",1,2017
+772,PORT,"Georgetown, SC",1,2017
+215,WATERWAY,"Glen Cove Creek, NY",1,2017
+515,PORT,"Glen Cove, NY",1,2017
+143,PORT,"Gloucester, MA",1,2017
+1332,WATERWAY,"Goose Creek, Sommerset County, MD",1,2017
+361,WATERWAY,"Gowanus Canal, NY",1,2017
+360,PORT,"Gowanus Creek Channel, NY",1,2017
+363,WATERWAY,"Gravesend Bay, NY",1,2017
+382,PORT,"Great Kills Harbor, Staten Island, NY",1,2017
+853,WATERWAY,"Great Pee Dee River, SC",1,2017
+300,PORT,"Great Salt Pond, Block Island, RI",1,2017
+221,WATERWAY,"Great South Bay, NY",1,2017
+1175,PORT,"Green Harbor, MA",1,2017
+527,PORT,"Greenport, NY",1,2017
+677,WATERWAY,"Greenvale Creek, VA",1,2017
+82,WATERWAY,"Greenwich Bay, RI",1,2017
+319,PORT,"Greenwich, CT",1,2017
+307,PORT,"Guilford, CT",1,2017
+393,PORT,"Hackensack River, NJ",1,2017
+5738,WATERWAY,"Hampton Creek, VA",1,2017
+1167,PORT,"Hampton, NH",1,2017
+358,PORT,"Harlem River, NY",1,2017
+19,WATERWAY,"Harraseeket River, ME",1,2017
+303,PORT,"Hay, NY",1,2017
+514,PORT,"Hempstead, NY",1,2017
+126,PORT,"Hendricks, ME",1,2017
+484,WATERWAY,"Herring Bay and Rockhold Creek, MD",1,2017
+473,WATERWAY,"Herring Creek, MD",1,2017
+165,PORT,"Hingham Harbor, MA",1,2017
+428,WATERWAY,"Honga River and Tar Bay, MD",1,2017
+1350,WATERWAY,"Hope Creek, NJ",1,2017
+738,PORT,"Hopewell, VA",1,2017
+733,PORT,"Horn Harbor, VA",1,2017
+626,WATERWAY,"Hoskins Creek, VA",1,2017
+63,WATERWAY,"Housatonic River, CT",1,2017
+5396,PORT,"Hudson River Channel, NY and NJ",1,2017
+5395,PORT,"Hudson River, NY (Lower Section)",1,2017
+5300,WATERWAY,"Hudson River, NY, Deepwater in Upper Bay, NY to Waterford, NY (Consolidated Report)",1,2017
+5303,WATERWAY,"Hudson River, NY, Mouth of Spuyten Duyvil Creek (Harlem River) to  Waterford, NY",1,2017
+519,PORT,"Huntington, NY",1,2017
+176,PORT,"Hyannis, MA",1,2017
+235,WATERWAY,"Indian River Inlet and Bay, DE",1,2017
+236,WATERWAY,"Indian River Inlet to Rehoboth Bay, DE, Waterway Connecting",1,2017
+237,WATERWAY,"Inland Waterway Between Rehoboth Bay and Delaware Bay, DE",1,2017
+2046,WATERWAY,"Intracoastal Waterway, Jacksonville to Miami, FL",1,2017
+2047,WATERWAY,"Intracoastal Waterway, Miami to Key West, FL",1,2017
+34,WATERWAY,"Ipswich River, MA",1,2017
+421,WATERWAY,"Island Creek, MD",1,2017
+154,PORT,"Island End River, MA",1,2017
+10,WATERWAY,"Isle Au Haut Thoroughfare, ME",1,2017
+137,PORT,"Isle of Shoals Harbor, ME and NH",1,2017
+642,WATERWAY,"Jackson Creek, VA",1,2017
+2017,PORT,"Jacksonville, FL",1,2017
+367,PORT,"Jamaica Bay, NY",1,2017
+5562,WATERWAY,"James River below Richmond, VA",1,2017
+5500,WATERWAY,"James River, VA",1,2017
+226,WATERWAY,"Jones Inlet, NY",1,2017
+26,WATERWAY,"Josias River, ME",1,2017
+16,WATERWAY,"Kennebec River, ME",1,2017
+25,WATERWAY,"Kennebunk River, ME",1,2017
+2111,PORT,"Key West, FL",1,2017
+377,PORT,"Keyport Harbor, NJ",1,2017
+611,WATERWAY,"Kings Creek, Northampton County, VA",1,2017
+418,WATERWAY,"Knapps Narrows, MD",1,2017
+673,WATERWAY,"Knobbs Creek, NC",1,2017
+670,WATERWAY,"Lafayette River, VA",1,2017
+1324,PORT,"Lagoon Pond, Martha's Vineyard, MA",1,2017
+535,PORT,"Lake Montauk Harbor, NY",1,2017
+344,PORT,"Larchmont Harbor, NY",1,2017
+245,WATERWAY,"Leipsic River, DE",1,2017
+381,PORT,"Lemon Creek, Staten Island, NY",1,2017
+1237,WATERWAY,"Little Choptank River to Choptank River, MD, Waterway Connecting",1,2017
+412,WATERWAY,"Little Creek, Queen Annes County, MD",1,2017
+558,PORT,"Little Egg Harbor, NJ",1,2017
+610,WATERWAY,"Little Machipongo River, VA",1,2017
+350,WATERWAY,"Little Neck Bay, NY",1,2017
+655,WATERWAY,"Little River (Creek), VA",1,2017
+243,WATERWAY,"Little River, DE",1,2017
+451,WATERWAY,"Little Wicomico River, VA",1,2017
+639,WATERWAY,"Locklies Creek, VA",1,2017
+848,WATERWAY,"Lockwoods Folly River, NC",1,2017
+218,WATERWAY,"Long Island Intracoastal Waterway, NY",1,2017
+347,PORT,"Long Island Sound at City Island, NY",1,2017
+466,WATERWAY,"Lower Machodoc Creek, VA",1,2017
+708,PORT,"Lowes Wharf, Talbot County, MD",1,2017
+2,WATERWAY,"Lubec Channel, ME",1,2017
+675,WATERWAY,"Lynhaven Roads, Inlet, and Connecting Waters, VA",1,2017
+148,PORT,"Lynn, MA",1,2017
+4,WATERWAY,"Machias River, ME",1,2017
+815,WATERWAY,"Mackay Creek, NC",1,2017
+155,PORT,"Malden River, MA",1,2017
+343,PORT,"Mamaroneck Harbor, NY",1,2017
+287,WATERWAY,"Manasquan River, NJ",1,2017
+144,PORT,"Manchester, MA",1,2017
+349,PORT,"Manhasset Bay, NY",1,2017
+1250,PORT,"Manns, NC",1,2017
+441,WATERWAY,"Manokin River, MD",1,2017
+767,WATERWAY,"Manteo (Shallowbag) Bay, NC",1,2017
+261,WATERWAY,"Mantua Creek, NJ",1,2017
+147,PORT,"Marblehead, MA",1,2017
+5251,PORT,"Marcus Hook, PA",1,2017
+113,PORT,"Matinicus, ME",1,2017
+186,PORT,"Mattapoisett, MA",1,2017
+650,WATERWAY,"Mattaponi River, VA",1,2017
+523,PORT,"Mattituck, NY",1,2017
+268,WATERWAY,"Maurice River, NJ",1,2017
+805,WATERWAY,"Meherrin River, NC",1,2017
+2106,PORT,"Melbourne, FL",1,2017
+44,WATERWAY,"Menemsha Creek, Martha's Vineyard, MA",1,2017
+2109,PORT,"Miami River, FL",1,2017
+2164,PORT,"Miami, FL",1,2017
+402,WATERWAY,"Middle River and Dark Head Creek, MD",1,2017
+643,WATERWAY,"Milford Haven, VA",1,2017
+310,PORT,"Milford, CT",1,2017
+493,WATERWAY,"Mill Creek, MD",1,2017
+640,WATERWAY,"Mill Creek, VA",1,2017
+240,WATERWAY,"Mispillion River, DE",1,2017
+725,PORT,"Monroe Bay and Creek, VA",1,2017
+72,WATERWAY,"Moosabec Bar, ME",1,2017
+764,PORT,"Morehead City, NC",1,2017
+1234,PORT,"Muddy Hook and Tyler Coves, MD",1,2017
+631,WATERWAY,"Mulberry Creek, VA",1,2017
+241,WATERWAY,"Murderkill River, DE",1,2017
+53,WATERWAY,"Mystic River, CT",1,2017
+153,PORT,"Mystic River, MA",1,2017
+1241,WATERWAY,"Nan Cove, MD",1,2017
+607,WATERWAY,"Nandua Creek, VA",1,2017
+665,WATERWAY,"Nansemond River, VA",1,2017
+432,WATERWAY,"Nanticoke River, DE and MD",1,2017
+433,PORT,"Nanticoke, MD",1,2017
+183,PORT,"Nantucket, MA",1,2017
+6,WATERWAY,"Narraguagus River, ME",1,2017
+207,WATERWAY,"Narrows of Lake Champlain, NY and VT",1,2017
+459,WATERWAY,"Neale Sound, MD",1,2017
+161,PORT,"Neponset River, MA",1,2017
+831,WATERWAY,"Neuse River, NC",1,2017
+187,PORT,"New Bedford, MA",1,2017
+299,PORT,"New Castle, DE",1,2017
+122,PORT,"New Harbor, ME",1,2017
+1507,PORT,"New Haven, CT",1,2017
+5000,WATERWAY,New Jersey Intracoastal Waterway (WTWY 5000),1,2017
+304,PORT,"New London, CT",1,2017
+2019,PORT,"New River, FL",1,2017
+803,WATERWAY,"New River, NC",1,2017
+346,PORT,"New Rochelle Harbor, NY",1,2017
+397,WATERWAY,"New York Harbor, NY Lower Entrance Channels",1,2017
+385,PORT,"New York Harbor, NY and NJ Upper Bay",1,2017
+388,PORT,"New York and New Jersey Channels, NY and NJ",1,2017
+398,PORT,"New York, NY and NJ",1,2017
+392,PORT,"Newark Bay, NJ (Included in NewarK Bay, NJ Consolidated Report and Port of New York)",1,2017
+139,PORT,"Newburyport, MA",1,2017
+5736,WATERWAY,"Newport News Creek, VA",1,2017
+736,PORT,"Newport News, VA",1,2017
+658,WATERWAY,"Newport News, VA Channel to",1,2017
+192,PORT,"Newport, RI",1,2017
+355,PORT,"Newtown Creek, NY",1,2017
+83,PORT,"Niantic Harbor, CT",1,2017
+464,WATERWAY,"Nomini Bay and Creek, VA",1,2017
+5735,PORT,"Norfolk Harbor, VA",1,2017
+810,WATERWAY,"Norfolk, VA to Sounds of NC - Waterway",1,2017
+844,WATERWAY,"Northeast (Cape Fear) River, NC",1,2017
+106,PORT,"Northeast Harbor, ME",1,2017
+404,WATERWAY,"Northeast River, MD",1,2017
+521,PORT,"Northport, NY",1,2017
+314,PORT,"Norwalk, CT",1,2017
+608,WATERWAY,"Occohannock Creek, VA",1,2017
+454,WATERWAY,"Occoquan Creek, VA",1,2017
+450,PORT,"Ocean City, MD",1,2017
+829,WATERWAY,"Ocracoke Inlet, NC",1,2017
+2102,WATERWAY,"Oklawaha River, FL",1,2017
+263,WATERWAY,"Oldmans Creek, NJ",1,2017
+606,WATERWAY,"Onancock River, VA",1,2017
+225,WATERWAY,"Orowoc Creek, NY",1,2017
+119,PORT,"Owls Head Harbor, ME",1,2017
+612,WATERWAY,"Oyster Channel, VA",1,2017
+666,WATERWAY,"Pagan River, VA",1,2017
+2162,PORT,"Palm Beach, FL",1,2017
+837,WATERWAY,"Pamlico Sound to Beaufort Harbor, NC, Waterway Connecting",1,2017
+769,WATERWAY,"Pamlico Sound to Rodanthe, NC, Channel",1,2017
+825,WATERWAY,"Pamlico and Tar Rivers, NC",1,2017
+649,WATERWAY,"Pamunkey River, VA",1,2017
+487,WATERWAY,"Parish Creek, MD",1,2017
+678,WATERWAY,"Parker Creek, VA",1,2017
+627,WATERWAY,"Parrotts Creek, VA",1,2017
+394,PORT,"Passaic River, NJ",1,2017
+58,WATERWAY,"Patchogue River, CT",1,2017
+223,WATERWAY,"Patchogue River, NY",1,2017
+479,WATERWAY,"Patuxent River, MD",1,2017
+5252,PORT,"Paulsboro, NJ",1,2017
+52,WATERWAY,"Pawcatuck River, RI and CT",1,2017
+530,WATERWAY,"Peconic River, NY",1,2017
+502,PORT,"Peekskill, NY",1,2017
+298,PORT,"Penn Manor, PA",1,2017
+12,WATERWAY,"Penobscot River, ME",1,2017
+1286,WATERWAY,"Pepper Creek, DE",1,2017
+807,WATERWAY,"Perquimans River, NC",1,2017
+552,PORT,"Philadelphia, PA",1,2017
+5737,WATERWAY,"Phoebus, VA to deep water in Hampton Roads, VA, Channel",1,2017
+5,WATERWAY,"Pleasant River, ME",1,2017
+170,PORT,"Plymouth, MA",1,2017
+447,WATERWAY,"Pocomoke River, MD",1,2017
+198,PORT,"Point Judith and Point Judith Pond, RI, Harbor of Refuge",1,2017
+181,WATERWAY,"Pollack Rip Shoals, Nantucket Sound, MA",1,2017
+2097,WATERWAY,"Ponce De Leon Inlet, FL",1,2017
+2160,PORT,"Port Canaveral, FL",1,2017
+340,PORT,"Port Chester Harbor, NY",1,2017
+2163,PORT,"Port Everglades, FL",1,2017
+507,PORT,"Port Henry, NY",1,2017
+522,PORT,"Port Jefferson, NY",1,2017
+774,PORT,"Port Royal, SC",1,2017
+128,PORT,"Portland, ME",1,2017
+135,PORT,"Portsmouth, NH",1,2017
+452,WATERWAY,"Potomac River Below Washington, DC",1,2017
+721,PORT,"Potomac River at Lower Cedar Point, MD",1,2017
+1240,WATERWAY,"Potomac River at Mt. Vernon, VA",1,2017
+716,PORT,"Potomac River, Virginia Channel, DC",1,2017
+714,PORT,"Potomac River, Washington Channel, DC",1,2017
+191,PORT,"Providence, RI",1,2017
+172,PORT,"Provincetown, MA",1,2017
+296,WATERWAY,"Queens Creek, VA",1,2017
+704,PORT,"Queenstown, MD",1,2017
+609,WATERWAY,"Quinby Creek, VA",1,2017
+262,WATERWAY,"Racoon Creek, NJ",1,2017
+390,WATERWAY,"Rahway River, NJ",1,2017
+623,WATERWAY,"Rappahannock River, VA",1,2017
+380,WATERWAY,"Raritan River to Arthur Kill Cut Off Channel, NJ",1,2017
+387,PORT,"Raritan River, NJ",1,2017
+202,WATERWAY,Reserved Channel (Included in Port of Boston),1,2017
+446,WATERWAY,"Rhodes Point to Tylerton, Somerset County, MD",1,2017
+2100,WATERWAY,"Rice Creek, FL",1,2017
+737,PORT,"Richmond, VA",1,2017
+813,WATERWAY,"Roanoke River, NC",1,2017
+703,PORT,"Rock Hall, MD",1,2017
+118,PORT,"Rockland, ME",1,2017
+142,PORT,"Rockport, MA",1,2017
+117,PORT,"Rockport, ME",1,2017
+768,WATERWAY,"Rollinson Channel, NC",1,2017
+503,PORT,"Rondout, NY",1,2017
+214,PORT,"Rouses Point, NY",1,2017
+20,WATERWAY,"Royal River, ME",1,2017
+138,PORT,"Rye, NH",1,2017
+24,WATERWAY,"Saco River, ME",1,2017
+531,PORT,"Sag Harbor, NY",1,2017
+188,PORT,"Sakonnet, RI",1,2017
+265,WATERWAY,"Salem River, NJ",1,2017
+146,PORT,"Salem, MA",1,2017
+1275,PORT,"Sandy Bay, Cape Ann, MA Harbor of Refuge",1,2017
+374,PORT,"Sandy Hook Bay at Leonardo, NJ",1,2017
+1276,PORT,"Sandy Hook Bay, NJ",1,2017
+373,PORT,"Sandy Hook Bay, NJ (Nonproject)",1,2017
+396,WATERWAY,"Sandy Hook Channel, NY",1,2017
+856,WATERWAY,"Santee River, SC",1,2017
+885,WATERWAY,"Satilla River, GA",1,2017
+504,PORT,"Saugerties, NY",1,2017
+40,WATERWAY,"Saugus River, MA",1,2017
+877,WATERWAY,"Savannah River below Augusta, GA",1,2017
+776,PORT,"Savannah, GA",1,2017
+23,WATERWAY,"Scarboro River, ME",1,2017
+557,PORT,"Schuylkill River, PA",1,2017
+167,PORT,"Scituate, MA",1,2017
+816,WATERWAY,"Scuppernong River, NC",1,2017
+112,PORT,"Searsport, ME",1,2017
+49,WATERWAY,"Seekonk River, RI",1,2017
+849,WATERWAY,"Shallotte River, NC",1,2017
+228,WATERWAY,"Shark River, NJ",1,2017
+366,PORT,"Sheepshead Bay, NY",1,2017
+216,WATERWAY,"Shinnecock Inlet, NY",1,2017
+861,PORT,"Shipyard River, SC",1,2017
+375,PORT,"Shoal Harbor and Compton Creek, NJ",1,2017
+538,WATERWAY,"Shrewsbury River, NJ",1,2017
+762,PORT,"Silver Lake Harbor, NC",1,2017
+427,WATERWAY,"Slaughter Creek, MD",1,2017
+475,WATERWAY,"Smith Creek, MD",1,2017
+834,WATERWAY,"Smiths Creek (Pamlico County), NC",1,2017
+846,WATERWAY,"Smiths Creek (Wilmington), NC",1,2017
+246,WATERWAY,"Smyrna River, DE",1,2017
+123,PORT,"South Bristol, ME",1,2017
+826,WATERWAY,"South River, NC",1,2017
+107,PORT,"Southwest Harbor, ME",1,2017
+2159,PORT,"St. Augustine, FL",1,2017
+461,WATERWAY,"St. Catherines Sound, MD",1,2017
+1,WATERWAY,"St. Croix River, ME",1,2017
+472,WATERWAY,"St. George Island, MD Channel to Island Creek",1,2017
+481,WATERWAY,"St. Jerome Creek, MD",1,2017
+2018,WATERWAY,"St. Johns River, FL Jacksonville to Lake Harney",1,2017
+242,WATERWAY,"St. Jones River, DE",1,2017
+2107,WATERWAY,"St. Lucie Inlet, FL",1,2017
+886,WATERWAY,"St. Marys River, GA and FL",1,2017
+294,PORT,"St. Michaels Harbor, MD",1,2017
+462,WATERWAY,"St. Patricks Creek, MD",1,2017
+497,WATERWAY,"St. Peters Creek, MD",1,2017
+317,PORT,"Stamford, CT",1,2017
+604,WATERWAY,"Starlings Creek, VA",1,2017
+111,PORT,"Stockton, ME",1,2017
+302,PORT,"Stonington, CT",1,2017
+109,PORT,"Stonington, ME",1,2017
+85,WATERWAY,"Stony Creek, CT",1,2017
+819,WATERWAY,"Stumpy Point Bay, NC",1,2017
+9907,PORT,"Summary of Traffic Delaware River and Tributaries, Trenton, NJ to the Sea",1,2017
+9906,PORT,Summary of Traffic Total Waterborne Commerce of the Port of New York,1,2017
+403,WATERWAY,"Susquehanna River Above and Below Havre De Grace, MD",1,2017
+771,WATERWAY,"Swan Quarter Bay to Deep Bay, NC, Waterway Connecting",1,2017
+605,WATERWAY,"Tangier Channel, VA",1,2017
+501,PORT,"Tarrytown, NY",1,2017
+47,WATERWAY,"Taunton River, MA",1,2017
+120,PORT,"Tenants Harbor, ME",1,2017
+54,WATERWAY,"Thames River, CT",1,2017
+121,PORT,"Thomaston, ME",1,2017
+835,WATERWAY,"Thoroughfare Bay to Cedar Bay, NC, Channel",1,2017
+710,PORT,"Tilghman Island, MD",1,2017
+288,WATERWAY,"Toms River, NJ",1,2017
+628,WATERWAY,"Totuskey Creek, VA",1,2017
+420,WATERWAY,"Town Creek, MD",1,2017
+163,PORT,"Town River, MA",1,2017
+419,WATERWAY,"Tred Avon River, MD",1,2017
+832,WATERWAY,"Trent River, NC",1,2017
+553,PORT,"Trenton, NJ",1,2017
+290,WATERWAY,"Tuckerton Creek, NJ",1,2017
+448,WATERWAY,"Twitch Cove and Big Thoroughfare River, MD",1,2017
+436,WATERWAY,"Tyaskin Creek, MD",1,2017
+679,PORT,"Tylers Beach, VA",1,2017
+458,WATERWAY,"Upper Machodoc Creek, VA",1,2017
+634,WATERWAY,"Urbanna Creek, VA",1,2017
+1335,PORT,"Village Creek, SC",1,2017
+182,PORT,"Vineyard Haven, MA",1,2017
+5700,PORT,"Virginia, VA, Port of",1,2017
+852,WATERWAY,"Waccamaw River, SC",1,2017
+357,WATERWAY,"Wallabout Channel, NY",1,2017
+818,PORT,"Wanchese, NC",1,2017
+174,PORT,"Wareham, MA",1,2017
+50,WATERWAY,"Warren River, RI",1,2017
+425,WATERWAY,"Warwick River, MD",1,2017
+81,PORT,"Warwick, RI",1,2017
+713,PORT,"Washington, DC",1,2017
+376,WATERWAY,"Waycake Creek, NJ",1,2017
+173,PORT,"Wellfleet, MA",1,2017
+352,PORT,"Westchester Creek, NY",1,2017
+46,WATERWAY,"Westport River, MA",1,2017
+313,PORT,"Westport, CT",1,2017
+164,PORT,"Weymouth Back River, MA",1,2017
+162,PORT,"Weymouth Fore River, MA",1,2017
+197,PORT,"Wickford, RI",1,2017
+437,WATERWAY,"Wicomico River, Md (eastern Shore)",1,2017
+669,WATERWAY,"Willoughby Channel, VA",1,2017
+847,WATERWAY,"Wilmington Harbor, NC",1,2017
+554,PORT,"Wilmington, DE",1,2017
+766,PORT,"Wilmington, NC",1,2017
+734,PORT,"Winter Harbor, VA",1,2017
+151,PORT,"Winthrop Harbor, MA",1,2017
+1329,WATERWAY,"Wishart Point Channel, VA",1,2017
+130,PORT,"Wood Island Harbor, ME and the Pool at Biddeford",1,2017
+180,WATERWAY,"Woods Hole Channel, MA",1,2017
+820,WATERWAY,"Wrights Creek, NC",1,2017
+27,PORT,"York Harbor, ME",1,2017
+648,WATERWAY,"York River, VA",1,2017
+654,WATERWAY,"York River, VA to Back Creek to Slaights Wharf VA, Channel",1,2017

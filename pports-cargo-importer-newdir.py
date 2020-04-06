@@ -71,8 +71,8 @@ def parseAnnualData(annual_dir, type):
                         dom_shipment = row[9]
                         for_receipt = row[12]
                         for_shipment = row[13]
-                        # print port, year, pub_group, dom_intraport, dom_receipt, dom_shipment, for_receipt, for_shipment
-                        cur.execute(SQL_INSERT_CARGO, (port, year, pub_group, dom_intraport, dom_receipt, dom_shipment, for_receipt, for_shipment))
+                        print port, year, pub_group, dom_intraport, dom_receipt, dom_shipment, for_receipt, for_shipment
+                        # cur.execute(SQL_INSERT_CARGO, (port, year, pub_group, dom_intraport, dom_receipt, dom_shipment, for_receipt, for_shipment))
                     con.commit()
             elif dataType == 'trips':
                 with open(root +'/' + file, 'r') as f:
@@ -89,8 +89,8 @@ def parseAnnualData(annual_dir, type):
                             receipt_trip = row[i]
                             shipment_trip = row[i+1]
                             traffic_type = fieldNames[i]
-                            # print port, year, receipt_trip, shipment_trip, traffic_type
-                            cur.execute(SQL_INSERT_TRIPS, (port, year, receipt_trip, shipment_trip, traffic_type))
+                            print port, year, receipt_trip, shipment_trip, traffic_type
+                            # cur.execute(SQL_INSERT_TRIPS, (port, year, receipt_trip, shipment_trip, traffic_type))
                     con.commit()
 
     return
