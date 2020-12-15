@@ -1,4 +1,5 @@
 
         [console_scripts]
-        update_shipcalls=marexchange.cli:main
+        shipcalls=marexchange.cli:main
+        tradedata=usatrade.cli:main
     

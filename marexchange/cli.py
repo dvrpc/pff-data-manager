@@ -6,11 +6,13 @@ def main():
     pass
 
 @click.command()
-def say_hi():
-    print("What the fuck is up asshat")
+@click.argument('filename', type=click.Path(exists=True))
+def load(filename):
+    """Print FILENAME if the file exists."""
+    click.echo(click.format_filename(filename))
 
 all_commands = [
-    say_hi
+    load
 ]
 
 for cmd in all_commands:

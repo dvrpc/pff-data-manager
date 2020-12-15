@@ -10,5 +10,6 @@ setup(
     entry_points="""
         [console_scripts]
         shipcalls=marexchange.cli:main
+        tradedata=usatrade.cli:main
     """,
 )

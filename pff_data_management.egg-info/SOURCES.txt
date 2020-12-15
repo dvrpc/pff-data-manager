@@ -6,3 +6,8 @@ pff_data_management.egg-info/SOURCES.txt
 pff_data_management.egg-info/dependency_links.txt
 pff_data_management.egg-info/entry_points.txt
 pff_data_management.egg-info/top_level.txt
+usatrade/__init__.py
+usatrade/cli.py
+utils/__init__.py
+utils/script-template.py
+utils/settings.py
