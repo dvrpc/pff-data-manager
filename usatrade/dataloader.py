@@ -31,10 +31,21 @@ def get_trade(year):
             cont_kg = int(item[5])
             cont_value = int(item[6])
 
-            cur.execute(SQL_INSERT_USATRADE, (year, type, portid, hs_group,vessel_kg,vessel_value,cont_kg,cont_value))
+            # cur.execute(SQL_INSERT_USATRADE, (year, type, portid, hs_group,vessel_kg,vessel_value,cont_kg,cont_value))
         print("USA Trade %s for %s imported to database" % (imex,year))
     con.commit()
 
+def check_year(year):
+    """Check that data isn't already in the database"""
+    sql = "SELECT EXISTS(SELECT 1 FROM usa_trade WHERE year = %s)"
+
+    cur.execute(sql, (year,))
+    val = cur.fetchone()
+    if val[0] == True:
+        return 'exists'
+    else:
+        return 'new'
 
 if __name__ == "__main__":
     get_trade()
+    check_year()
