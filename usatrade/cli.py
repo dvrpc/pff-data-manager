@@ -1,8 +1,6 @@
 import click
 import psycopg2 as psql
-
-from utils.settings import conn_string
-from .dataloader import get_imports
+from .dataloader import get_trade
 
 @click.group()
 def main():
@@ -14,8 +12,8 @@ def main():
 def load(year):
     """Query USA Trade API for year of interest"""
     
-    click.echo("Downloading export data for %s" % year) 
-    get_imports(year)
+    click.echo("Downloading trade data for %s" % year) 
+    get_trade(year)
 
     # click.echo(response.text)
 
