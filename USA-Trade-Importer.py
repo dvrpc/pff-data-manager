@@ -34,9 +34,9 @@ path = sys.argv[1]
 
 # SQL statement for the two tables
 SQL_INSERT_CARGO = """
-INSERT INTO usa_trade_comm(portid, year, comm_code, import_kg, import_value, export_kg, export_value) 
+INSERT INTO usa_trade_comm(portid, portname, year, hs_group, import_kg, import_value, export_kg, export_value) 
 VALUES (
-    %s,%s,%s,%s,%s,%s,%s
+    %s,%s,%s,%s,%s,%s,%s,%s
 );
 """
 con = psql.connect(conn_string)
@@ -45,24 +45,21 @@ cur = con.cursor()
 
 
 # parse the files
-def parseAnnualData(annual_dir):
-    for root, dirs, files in os.walk( annual_dir ):
-        print(root)
-        for file in files:
-            with open(root +'/' + file, 'r') as f:
-                data = csv.reader(islice(f, 1, None))
-                for row in data:
-                    #print row
-                    portid = row[7]
-                    year = row[2]
-                    comm_code = row[1]
-                    import_kg = row[4]
-                    import_value = [3]
-                    export_kg = [5]
-                    export_value = [6]
-                    print portid, year, comm_code, import_kg, import_value, export_kg, export_value
-                    # cur.execute(SQL_INSERT_CARGO, (portid, year, comm_code, import_kg, import_value, export_kg, export_value))
-                con.commit()
+def parseAnnualData(file_path):
+    with open(path) as f:
+        data = csv.reader(islice(f, 1, None))
+        for row in data:
+            portid = row[7]
+            portname = row[0]
+            year = row[2]
+            hs_group = row[1]
+            import_kg = row[4]
+            import_value = row[3]
+            export_kg = row[5]
+            export_value = row[6]
+            #print portid, year, hs_group, import_kg, import_value, export_kg, export_value
+            cur.execute(SQL_INSERT_CARGO, (portid, portname, year, hs_group, import_kg, import_value, export_kg, export_value))
+        con.commit()
     return
 
 #import file
