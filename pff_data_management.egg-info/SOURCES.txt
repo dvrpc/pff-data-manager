@@ -1,0 +1,8 @@
+setup.py
+marexchange/__init__.py
+marexchange/cli.py
+pff_data_management.egg-info/PKG-INFO
+pff_data_management.egg-info/SOURCES.txt
+pff_data_management.egg-info/dependency_links.txt
+pff_data_management.egg-info/entry_points.txt
+pff_data_management.egg-info/top_level.txt

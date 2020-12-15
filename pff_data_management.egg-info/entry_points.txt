@@ -1,0 +1,4 @@
+
+        [console_scripts]
+        update_shipcalls=marexchange.cli:main
+    
