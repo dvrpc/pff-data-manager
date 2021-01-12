@@ -25,19 +25,22 @@ import requests
 from bs4 import BeautifulSoup
 import select
 from selenium import webdriver
-driver = webdriver.Chrome(executable_path='C:\Users\kscudder\Documents\GitHub\data-management\chrome_driver\chromedriver.exe')
+driver = webdriver.Chrome(executable_path=r'C:\Users\kscudder\Documents\GitHub\data-management\chrome_driver\chromedriver.exe')
 from pandas import DataFrame
 import numpy as np
 
 # check for necessary arguments before running
-if (len(sys.argv) < 2 or  len(sys.argv) > 2):
-    print """\
-        ERROR: This script requires one argument:
+errorPrompt = """\
+       ERROR: This script requires one argument:
 
         1 - file path for csv list of ports
 
-        Usage: usace-port-data-extraction.py <year directory> <port directory>
+        Usage: usace-port-data-extraction.py <port file>
         """
+
+
+if (len(sys.argv) < 2 or  len(sys.argv) > 2):
+    print(errorPrompt)
     sys.exit(1)
 
 #accept arguments from command line
@@ -89,14 +92,14 @@ def scrapeUSACEdata(arg1, arg2, arg3):
     #print to csv
     port = arg1
     year = arg2
-    PATH = 'C:\Users\kscudder\Documents\GitHub\data-management\port-cargo\cargo.' + str(year) + '.' + str(port) + '.csv'
+    PATH = r'C:\Users\kscudder\Documents\GitHub\data-management\port-cargo\cargo.' + str(year) + '.' + str(port) + '.csv'
     table.to_csv(PATH, index = None)
     return
 
 #extract tables by year and portID (available years include 2000 - 2018)
 for i in range(2010, 2019):
     year = i
-    print i
+    print(i)
     f = open(sys.argv[1])
     ports = csv.reader(f)
     for row in ports:
@@ -105,5 +108,5 @@ for i in range(2010, 2019):
         urlbase2 = '/region/4/location/'
         port = row[0]
         url = urlbase + str(year) + urlbase2 + port
-        print url
+        print(url)
         scrapeUSACEdata(port, year, url)
