@@ -5,7 +5,7 @@ import json
 from utils.settings import conn_string
 
 SQL_INSERT_USATRADE = """
-        INSERT INTO usa_trade(year, type, portid, hs_group, vessel_kg, vessel_value, cont_kg, cont_value) 
+        INSERT INTO ustrade.annual_trade(year, type, portid, hs_group, vessel_kg, vessel_value, cont_kg, cont_value) 
         VALUES (
             %s,%s,%s,%s,%s,%s,%s,%s
         )
@@ -37,7 +37,7 @@ def get_trade(year):
 
 def check_year(year):
     """Check that data isn't already in the database"""
-    sql = "SELECT EXISTS(SELECT 1 FROM usa_trade WHERE year = %s)"
+    sql = "SELECT EXISTS(SELECT 1 FROM ustrade.annual_trade WHERE year = %s)"
 
     cur.execute(sql, (year,))
     val = cur.fetchone()
@@ -50,7 +50,7 @@ def get_top(year, type, unit, port, num):
     """Return the top commodities"""
     sql = """
     SELECT h.hs_name, t.v FROM (SELECT sum(%s) as v, hs_group
-    FROM usa_trade 
+    FROM ustrade.annual_trade 
     WHERE type = %s AND year = %s %s
     GROUP BY hs_group) as t
     INNER JOIN hs_comm_code as h
