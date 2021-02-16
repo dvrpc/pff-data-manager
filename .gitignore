@@ -2,3 +2,5 @@
 .pyc
 *.pyc
 *.egg-info/
+.vs-code/
+.vs-code\
