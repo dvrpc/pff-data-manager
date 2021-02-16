@@ -2,4 +2,4 @@
 .pyc
 *.pyc
 *.egg-info/
-.vs-code/
+.vscode/
