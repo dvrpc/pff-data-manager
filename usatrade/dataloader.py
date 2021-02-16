@@ -46,6 +46,19 @@ def check_year(year):
     else:
         return 'new'
 
+def get_top(year, type, unit, port, num):
+    """Return the top commodities"""
+    sql = """
+    SELECT h.hs_name, t.v FROM (SELECT sum(%s) as v, hs_group
+    FROM usa_trade 
+    WHERE type = %s AND year = %s %s
+    GROUP BY hs_group) as t
+    INNER JOIN hs_comm_code as h
+    ON h.hs_group = t.hs_group
+    ORDER BY t.v DESC
+    LIMIT %s;
+    """
+
 if __name__ == "__main__":
     get_trade()
     check_year()

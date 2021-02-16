@@ -23,8 +23,19 @@ def load(year):
         click.echo("Downloading trade data for %s" % year) 
         get_trade(year)
 
+@click.command()
+@click.argument('imex')
+@click.argument('year')
+@click.option('--port', '-p', default='', help='Specify a US Census Port ID')
+@click.option('--number', '-n', default=5, help='Specify top n results')
+def top(imex, year, port, number):
+    """Query top commodities by direction and year"""
+    
+    click.echo('%s for %s' % (port, number))
+
 all_commands = [
-    load
+    load,
+    top
 ]
 
 for cmd in all_commands:
