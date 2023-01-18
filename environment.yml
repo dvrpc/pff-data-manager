@@ -1,4 +1,4 @@
-name: PFFData
+name: pff-data-manager
 channels:
   - conda-forge
 dependencies:

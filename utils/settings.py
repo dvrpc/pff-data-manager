@@ -11,8 +11,4 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # connection settings
-host = os.getenv("HOST")
-dbname = os.getenv("DBNAME")
-user = os.getenv("USER")
-password = os.getenv("PASSWORD")
-conn_string = "host='%s' dbname='%s' user='%s' password='%s'" % (host, dbname, user, password)
+FREIGHTDB_CONN = os.getenv("FREIGHTDB_CONN")
