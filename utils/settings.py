@@ -12,3 +12,4 @@ load_dotenv()
 
 # connection settings
 FREIGHTDB_CONN = os.getenv("FREIGHTDB_CONN")
+CENSUS_API_KEY = os.getenv("CENSUS_API_KEY")
