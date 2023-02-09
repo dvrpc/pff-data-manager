@@ -11,7 +11,7 @@
 import os
 import sys
 import psycopg2 as psql
-from settings import conn_string
+from utils.settings import FREIGHTDB_CONN
 
 
 # SQL statement
@@ -24,7 +24,7 @@ UPDATE pports_act
 SET portid = %s
 WHERE oid = %s
 """
-con = psql.connect(conn_string)
+con = psql.connect(FREIGHTDB_CONN)
 cur = con.cursor()
 
 cur.execute(SQL_QUERY)

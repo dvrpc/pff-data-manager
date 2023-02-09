@@ -18,7 +18,7 @@ import sys
 import psycopg2 as psql
 import csv
 import shutil
-from settings import conn_string
+from utils.settings import FREIGHTDB_CONN
 
 errorPrompt = """\
         ERROR: This script requires one arguments:
@@ -29,11 +29,11 @@ errorPrompt = """\
         """
 
 # check for necessary arguments before running
-if (len(sys.argv) < 2 or  len(sys.argv) > 2):
-    print errorPrompt
+if len(sys.argv) < 2 or len(sys.argv) > 2:
+    print(errorPrompt)
     sys.exit(1)
 
-#accept arguments from command line
+# accept arguments from command line
 file = sys.argv[1]
 
 # SQL statement for the two tables
@@ -43,14 +43,14 @@ VALUES (
     %s,%s,%s,%s
 )
 """
-con = psql.connect(conn_string)
+con = psql.connect(FREIGHTDB_CONN)
 cur = con.cursor()
 
 
 # parse the files
-with open(file, 'r') as f:
+with open(file, "r") as f:
     data = csv.reader(f, delimiter=",")
-    next(data) #skip header
+    next(data)  # skip header
     for row in data:
         if row:
             portid = row[1]

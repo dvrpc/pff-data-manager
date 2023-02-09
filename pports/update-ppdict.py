@@ -12,7 +12,7 @@ import os
 import sys
 import psycopg2 as psql
 import requests
-from settings import conn_string
+from utils.settings import FREIGHTDB_CONN
 
 
 # SQL statement
@@ -27,7 +27,7 @@ UPDATE pports_act
 SET portid = %s
 WHERE oid = %s
 """
-con = psql.connect(conn_string)
+con = psql.connect(FREIGHTDB_CONN)
 cur = con.cursor()
 cur2 = con.cursor()
 
@@ -47,19 +47,23 @@ missing_ids = []
 for line in data:
     if not line[0] in missing_ids:
         missing_ids.append(line[0])
-print len(missing_ids)
+print(len(missing_ids))
 for port in missing_ids:
-        print port
-        response = requests.get('https://geo.dot.gov/server/rest/services/NTAD/Ports_Major/MapServer/0/query?where=UPPER(PORT)LIKE%27'+port+'%27&outFields=PORT,PORT_NAME&outSR=4326&f=json')
-        portinfo =  response.json()
-        if portinfo['features']:
-                newport = portinfo['features'][0]['attributes']['PORT']
-                lon = portinfo['features'][0]['geometry']['y']
-                lat = portinfo['features'][0]['geometry']['x']
-                name = portinfo['features'][0]['attributes']['PORT_NAME']
-                cur2.execute(SQL_ADD_PORTS, (newport, lat, lon, name))
-        else:
-                print "No match found"   
+    print(port)
+    response = requests.get(
+        "https://geo.dot.gov/server/rest/services/NTAD/Ports_Major/MapServer/0/query?where=UPPER(PORT)LIKE%27"
+        + port
+        + "%27&outFields=PORT,PORT_NAME&outSR=4326&f=json"
+    )
+    portinfo = response.json()
+    if portinfo["features"]:
+        newport = portinfo["features"][0]["attributes"]["PORT"]
+        lon = portinfo["features"][0]["geometry"]["y"]
+        lat = portinfo["features"][0]["geometry"]["x"]
+        name = portinfo["features"][0]["attributes"]["PORT_NAME"]
+        cur2.execute(SQL_ADD_PORTS, (newport, lat, lon, name))
+    else:
+        print("No match found")
 
 cur2.close()
 con.commit()
