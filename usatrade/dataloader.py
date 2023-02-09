@@ -50,9 +50,7 @@ def get_trade(year):
 
 def check_year(year):
     """Check that data isn't already in the database"""
-    sql = "SELECT EXISTS(SELECT 1 FROM ustrade.annual_trade WHERE year = %s)"
-
-    cur.execute(sql, (year,))
+    cur.execute(f"SELECT EXISTS(SELECT 1 FROM ustrade.annual_trade WHERE year ={year})")
     val = cur.fetchone()
     if val[0] == True:
         return "exists"
