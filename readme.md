@@ -1,4 +1,5 @@
 # PhillyFreightFinder Data Manager
+
 An internal python toolset for managing datasets behind DVRPC's PhillyFreightFinder regional data program. This toolset is built with a Command Line Interface (CLI) for various ETL functions of data utilized by the DVRPC Freight Planning program.
 
 ## 1. Setup Environment
@@ -19,7 +20,9 @@ This toolset uses environment variables for managing database and datasource con
 
 ```
 FREIGHTDB_CONN = "postgresql://username:password@host:port/dbname"
+CENSUS_API_KEY = "CENSUS API KEY"
 ```
 
 ## 3. Commands
+
 ...document commands has toolset is developed.

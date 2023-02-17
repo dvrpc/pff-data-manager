@@ -1,6 +1,6 @@
 import click
 import psycopg2 as psql
-from .dataloader import get_trade, check_year
+from .dataloader import get_annual_trade, insert_annual_trade 
 
 @click.group()
 def main():
@@ -9,19 +9,13 @@ def main():
 
 @click.command()
 @click.argument('year')
-def load(year):
-    """Import new USA Trade data for DVRPC ports 
-    
-    Specify year of data
-    """
-    # run a check of year on current database
-    status = check_year(year)
-    if status == 'exists':
-        click.echo('Process failed. The data for %s already exists in the database' % year)
-        
-    else:
-        click.echo("Downloading trade data for %s" % year) 
-        get_trade(year)
+def get(year):
+    click.echo(get_annual_trade(year))
+
+@click.command()
+@click.argument('year')
+def insert(year):
+    insert_annual_trade(get_annual_trade(year))
 
 @click.command()
 @click.argument('imex')
@@ -34,8 +28,8 @@ def top(imex, year, port, number):
     click.echo('%s for %s' % (port, number))
 
 all_commands = [
-    load,
-    top
+    get,
+    insert
 ]
 
 for cmd in all_commands:
