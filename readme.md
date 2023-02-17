@@ -23,6 +23,23 @@ FREIGHTDB_CONN = "postgresql://username:password@host:port/dbname"
 CENSUS_API_KEY = "CENSUS API KEY"
 ```
 
-## 3. Commands
+## 3. File Structure
 
-...document commands has toolset is developed.
+Most of the files in this toolset are grouped in directories by the external datasource they interact with. This is intended to parallel the structure of the SQL server where schemas group together tables from the same datasource, and to allow for data sources with different release schedules to be updated independently. As detailed below,the dataloader.py file contains most of the functions required to: retrieve and clean external data, create tables and a schema for that data in a SQL database, and populate those tables with the cleaned data. The cli.py file defines terminal commands using the click library. Commands begin with the name of the datasource, which should be the same as the name of the subdirectory for that datasource, followed by another command. Insert commands retreive external data and insert it into a SQL table. Get commands retrive and print external data, but do not write to the SQL database. This makes it convient to check the data before committing it to the database. Finally some commands may have parameters. The parameters for the get and insert commands should be the same. The readme.md file contains documentation for the datasource-specific implementations of the functions  and commands listed below.
+### Example Datasource Subdirectory Structure
+- Folder Name: Example
+- dataloader.py (functions listed)
+    - check_schema_exists
+    - check_table_exists
+    - create_example_schema
+    - create_example_data_table
+    - get_example_data_table
+    - insert_example_data
+- cli.py (commands listed)
+    - example check_schema
+    - example check_table table
+    - example create_schema
+    - example create_table
+    - example get data
+    - example insert data
+- readme.md

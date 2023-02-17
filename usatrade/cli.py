@@ -1,6 +1,6 @@
 import click
 import psycopg2 as psql
-from .dataloader import get_annual_trade, insert_annual_trade 
+from . import dataloader as usatrade
 
 @click.group()
 def main():
@@ -8,14 +8,18 @@ def main():
     pass
 
 @click.command()
-@click.argument('year')
-def get(year):
-    click.echo(get_annual_trade(year))
+@click.argument('table')
+@click.option('--year','-y', help='Specify year for annual_trade table')
+def get(table, year):
+    if table == "annual_trade":
+        click.echo(usatrade.get_annual_trade(year))
 
 @click.command()
-@click.argument('year')
-def insert(year):
-    insert_annual_trade(get_annual_trade(year))
+@click.argument('table')
+@click.option('--year','-y', help='Specify year for annual_trade table')
+def insert(table, year):
+    if table == "annual_trade":
+        usatrade.insert_annual_trade(usatrade.get_annual_trade(year))
 
 @click.command()
 @click.argument('imex')
