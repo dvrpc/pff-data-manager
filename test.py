@@ -6,9 +6,5 @@ load_dotenv()
 FREIGHTDB_CONN = os.getenv("FREIGHTDB_CONN")
 CENSUS_API_KEY = os.getenv("CENSUS_API_KEY")
 
-from usatrade import dataloader as usatrade
-#print(usatrade.check_table_exists("annual_trade"),"\n\n")
-#usatrade.create_usatrade_schema()
-#usatrade.create_annual_trade()
-#print(usatrade.check_table_exists("annual_trade"))
-usatrade.insert_annual_trade(usatrade.get_annual_trade(2019))
+from army_corps import dataloader as ac
+ac.load_tonnage(r"C:\Users\mbrahms\Documents\GitHub\pff-data-manager\army_corps\army_corps_xlsx")

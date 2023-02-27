@@ -40,6 +40,9 @@ Most of the files in this toolset are grouped in directories by the external dat
     - example check_table table
     - example create_schema
     - example create_table
-    - example get data
-    - example insert data
+    - example load data
 - readme.md
+
+## To-Do:
+- In cli.py, consolidate get and insert commands into load
+- Move schema functions to database folder 
