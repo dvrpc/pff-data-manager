@@ -59,6 +59,16 @@ def load_principal_ports():
     except:
         print("Failed to load principal ports")
 
+def load_dvrpc_port_names(path):
+    ports = pd.read_csv(path)
+    print("Loading dvrpc port names")
+    for row in ports.itertuples(name=None):
+        cur.execute("""
+        INSERT INTO army_corps.dvrpc_port_names(port_name, dvrpc)
+        VALUES ('{port_name}', '{dvrpc}')
+        """.format(port_name=row[1], dvrpc=row[2]))
+    con.commit()
+
 def load_port_dict(path):
     ports = pd.read_csv(path)
     for row in ports.itertuples(name=None):

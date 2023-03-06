@@ -9,6 +9,7 @@ setup(
     license='MIT',
     entry_points="""
         [console_scripts]
+        army_corps=army_corps.cli:main
         shipcalls=marexchange.cli:main
         usatrade=usatrade.cli:main
     """,
