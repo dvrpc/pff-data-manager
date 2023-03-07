@@ -1,0 +1,14 @@
+name: pff-data-manager
+channels:
+  - conda-forge
+dependencies:
+  - python=3.8*
+  - psycopg2
+  - python-dotenv
+  - requests
+  - pip
+  - pandas
+  - click
+  - openpyxl=3.1.0
+  - pip:
+      - --editable .

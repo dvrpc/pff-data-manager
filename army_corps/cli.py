@@ -8,16 +8,18 @@ def main():
     pass
 
 @click.command()
-@click.argument('folderPath')
-@click.option('--overwrite')
-def load_tonnage(folderPath, overwrite):
-    army_corps.load_tonnage(folderPath, overwrite)
+@click.argument('path', type=click.Path(exists=True))
+def load_tonnage(path):
+    army_corps.load_tonnage(path)
 
+@click.command()
 def load_principal_ports():
     army_corps.load_principal_ports()
 
-def load_dvrpc_port_names(filePath):
-    army_corps.load_dvrpc_port_names(filePath)
+@click.command()
+@click.argument('path')
+def load_dvrpc_port_names(path):
+    army_corps.load_dvrpc_port_names(path)
 
 all_commands = [
     load_tonnage,

@@ -32,8 +32,9 @@ def load_tonnage(dir, overwrite=False):
                                 INSERT INTO army_corps.port_tonnage(port_name, year, total_tons, domestic_tons, foreign_tons, import_tons, export_tons)
                                 VALUES ('{port_name}', {year}, {total}, {domestic}, {foreign}, {import_tonnage}, {export})
                                 """.format(port_name=row[2].replace("'",""), year=year, total=row[3], domestic=row[4], foreign=row[5], import_tonnage=row[6], export=row[7]))
-                        except:
+                        except Exception as e:
                             print("Failed to load data for", year, "from", os.path.join(dir, file))
+                            print(e)
                     else:
                         print("Tonnage for", year, "already exists")
             else:
