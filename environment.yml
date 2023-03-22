@@ -9,5 +9,6 @@ dependencies:
   - pip
   - pandas
   - click
+  - openpyxl=3.1.0
   - pip:
       - --editable .
