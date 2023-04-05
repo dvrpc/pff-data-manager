@@ -12,13 +12,9 @@ CREATE TABLE IF NOT EXISTS army_corps.port_tonnage (
 CREATE TABLE IF NOT EXISTS army_corps.principal_ports (
     port_code text,
     port_name text,
-    port_type text,
-    year smallint,
-    geom geometry
-);
-
-CREATE TABLE IF NOT EXISTS army_corps.dvrpc_port_names (
-    port_name text,
+    x double precision,
+    y double precision,
+    msa_geoid character(5),
     dvrpc text
 );
 
@@ -34,21 +30,24 @@ CREATE VIEW army_corps.dvrpc_region_tonnage AS
         SUM(port_tonnage.domestic_tons) AS domestic_tons,
         SUM(port_tonnage.import_tons) AS import_tons,
         SUM(port_tonnage.export_tons) AS export_tons
-    FROM army_corps.port_tonnage LEFT JOIN army_corps.dvrpc_port_names ON dvrpc_port_names.port_name = port_tonnage.port_name
-    WHERE dvrpc_port_names.dvrpc = 'y'
+    FROM army_corps.port_tonnage LEFT JOIN army_corps.principal_ports ON principal_ports.port_name = port_tonnage.port_name
+    WHERE principal_ports.dvrpc = 'y'
     GROUP BY port_tonnage."year" 
     ORDER BY port_tonnage."year" DESC;
 
-CREATE VIEW army_corps.msa_tonnage AS
-    SELECT basename,
-        SUM(port_tonnage.domestic_tons) AS domestic_tons,
-        SUM(port_tonnage.import_tons) AS import_tons,
-        SUM(port_tonnage.export_tons) AS export_tons,
-        SUM(domestic_tons+import_tons+export_tons) AS total_tons,
-        RANK() OVER (ORDER BY SUM(total_tons) DESC) rank
-    FROM census.msas AS metros
-    JOIN army_corps.principal_ports ON ST_Contains(metros.geom, principal_ports.geom)
-    JOIN army_corps.port_tonnage ON port_tonnage.port_name = principal_ports.port_name
-    WHERE port_tonnage.year=2020
-    GROUP BY basename
-    ORDER BY rank
+CREATE OR REPLACE VIEW army_corps.msa_tonnage
+ AS
+ SELECT principal_ports.msa_geoid,
+    port_tonnage.year,
+    mode() WITHIN GROUP (ORDER BY msas.basename) AS msa_name,
+    sum(port_tonnage.domestic_tons) AS domestic_tons,
+    sum(port_tonnage.import_tons) AS import_tons,
+    sum(port_tonnage.export_tons) AS export_tons,
+    sum(port_tonnage.domestic_tons + port_tonnage.import_tons + port_tonnage.export_tons) AS total_tons,
+    rank() OVER (PARTITION BY port_tonnage.year ORDER BY (sum(port_tonnage.total_tons)) DESC) AS rank
+   FROM census.msas
+     LEFT JOIN army_corps.principal_ports ON msas.geoid = principal_ports.msa_geoid::text
+     LEFT JOIN army_corps.port_tonnage ON port_tonnage.port_name = principal_ports.port_name
+  WHERE port_tonnage.year <> 0
+  GROUP BY principal_ports.msa_geoid, port_tonnage.year
+  ORDER BY (rank() OVER (ORDER BY (sum(port_tonnage.total_tons)) DESC));

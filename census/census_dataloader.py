@@ -13,7 +13,7 @@ def load_msas():
     try:
         #gets the number of records in the MSA layer
         url = "https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/CBSA/MapServer/21/query?where=1%3D1&returnCountOnly=true&f=json"
-        total_records = features = requests.get(url).json()["count"]
+        total_records = requests.get(url).json()["count"]
         result_offset = 0
         max_results = 10
         
