@@ -3,6 +3,8 @@ import psycopg2 as psql
 import openpyxl
 import pandas as pd
 import requests
+import json
+import csv
 from shapely.geometry import shape
 from datetime import datetime
 from utils.settings import FREIGHTDB_CONN, CENSUS_API_KEY
@@ -49,6 +51,7 @@ def load_tonnage(dir, overwrite=False):
         con.commit()
 
 #retrieves the port_codes and port_names for all principal ports from a Bureau of Transportation Statistics REST service and inserts them into the army_corps.principal_ports table 
+"""
 def load_principal_ports():
     try:
         #set the year based on the layer's last edited date
@@ -64,9 +67,9 @@ def load_principal_ports():
             try:
                 #ensures port_code has the correct number of leading zeros, sanitizes port_name, and inserts data into principal_ports table
                 row = f["properties"]
-                port_code = str(row["PORT"]).zfill(4)
                 port_name=row["PORT_NAME"].replace("'","")
                 port_type=row["TYPE"]
+                port_code = port_type + str(row["PORT"]).zfill(4)
                 wkt = shape(f["geometry"]).wkt
                 cur.execute(f"INSERT INTO army_corps.principal_ports(port_code, port_name, port_type, year, geom) VALUES ('{port_code}', '{port_name}', '{port_type}', {year}, '{wkt}')")
             except Exception as e:
@@ -75,6 +78,7 @@ def load_principal_ports():
         con.commit()
     except:
         print("Failed to load principal ports")
+"""
 
 def load_dvrpc_port_names(path):
     ports = pd.read_csv(path)
@@ -122,3 +126,45 @@ def yearExists(year):
         return True
     else:
         return False
+
+def insert_port_geojson(path, year):
+    file = open(path, "r")
+    data = json.load(file)
+    features = data["features"]
+    for f in features:
+        row = f["properties"]
+        port_code = str(row["PORT"]).zfill(4)
+        port_name=row["PORT_NAME"].replace("'","")
+        wkt = shape(f["geometry"]).wkt
+        cur.execute(f"INSERT INTO army_corps.principal_ports(port_code, port_name, year, geom) VALUES ('{port_code}', '{port_name}', {year}, '{wkt}')")
+    con.commit()
+
+def insert_csv(path, table_name):
+    file = open(path, "r", encoding='utf-8-sig')
+    data = csv.reader(file)
+    line = 0 
+    col_names = ""
+    for row in data:
+        if line == 0:
+            col_names = ", ".join(row)
+            print(col_names)
+            line = line + 1
+        else:
+            values = []
+            for i in range(len(row)):
+                if row[i].isdigit():
+                    #row[i] is int
+                    values.append(row[i])
+                elif row[i].replace(".","").replace("-","").isdigit():
+                    #row[i] is float
+                    values.append(row[i])
+                elif row[i] == None or row[i] == "" or row[i] == "NULL":
+                    #row[i] is null
+                    values.append("NULL")
+                else:
+                    #row[i] is str
+                    values.append("'" + row[i] +  "'")
+            values = ", ".join(values)
+            cur.execute(f"INSERT INTO {table_name}({col_names}) VALUES ({values})")
+            line = line + 1
+    con.commit()
