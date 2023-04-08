@@ -13,18 +13,14 @@ def load_tonnage(path):
     army_corps.load_tonnage(path)
 
 @click.command()
-def load_principal_ports():
-    army_corps.load_principal_ports()
-
-@click.command()
-@click.argument('path')
-def load_dvrpc_port_names(path):
-    army_corps.load_dvrpc_port_names(path)
+@click.argument('path', type=click.Path(exists=True))
+@click.argument('table_name')
+def insert_csv(path, table_name):
+    army_corps.insert_csv(path, table_name)
 
 all_commands = [
     load_tonnage,
-    load_principal_ports,
-    load_dvrpc_port_names
+    insert_csv,
 ]
 
 for cmd in all_commands:

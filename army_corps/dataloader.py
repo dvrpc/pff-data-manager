@@ -80,24 +80,6 @@ def load_principal_ports():
         print("Failed to load principal ports")
 """
 
-def load_dvrpc_port_names(path):
-    ports = pd.read_csv(path)
-    print("Loading dvrpc port names")
-    for row in ports.itertuples(name=None):
-        cur.execute("""
-        INSERT INTO army_corps.dvrpc_port_names(port_name, dvrpc)
-        VALUES ('{port_name}', '{dvrpc}')
-        """.format(port_name=row[1], dvrpc=row[2]))
-    con.commit()
-
-def load_port_dict(path):
-    ports = pd.read_csv(path)
-    for row in ports.itertuples(name=None):
-        cur.execute("""
-        INSERT INTO army_corps.port_dict(port_code, port_name, lat, lon, dvrpc, geoid)
-        VALUES ('{port_code}', '{port_name}', {lon}, {lat}, '{dvrpc}', {geoid})
-        """.format(port_code=row[2], port_name=row[5], lon=row[3], lat=row[4], dvrpc=row[6], geoid=row[7]))
-
 #loops through possible names and returns the first name that matches a sheet in the specified *xlsx file
 def getPortSheetName(path):
     possibleNames = ["Ports_by_Name", "Port_Name"]
@@ -127,6 +109,8 @@ def yearExists(year):
     else:
         return False
 
+#geojson importer function, currently unused but may be useful in the future
+"""
 def insert_port_geojson(path, year):
     file = open(path, "r")
     data = json.load(file)
@@ -138,33 +122,44 @@ def insert_port_geojson(path, year):
         wkt = shape(f["geometry"]).wkt
         cur.execute(f"INSERT INTO army_corps.principal_ports(port_code, port_name, year, geom) VALUES ('{port_code}', '{port_name}', {year}, '{wkt}')")
     con.commit()
-
+"""
+#inserts an arbitrary csv file into an exisitng sql table given the path to the csv and the sql table name (including schema name)
+#TABLE AND COLUMNS MUST ALREADY EXIST 
+#FIRST ROW OF CSV MUST BE A HEADER THAT MATCHES COLUMN NAMES EXACTLY
 def insert_csv(path, table_name):
-    file = open(path, "r", encoding='utf-8-sig')
-    data = csv.reader(file)
-    line = 0 
-    col_names = ""
-    for row in data:
-        if line == 0:
-            col_names = ", ".join(row)
-            print(col_names)
-            line = line + 1
-        else:
-            values = []
-            for i in range(len(row)):
-                if row[i].isdigit():
-                    #row[i] is int
-                    values.append(row[i])
-                elif row[i].replace(".","").replace("-","").isdigit():
-                    #row[i] is float
-                    values.append(row[i])
-                elif row[i] == None or row[i] == "" or row[i] == "NULL":
-                    #row[i] is null
-                    values.append("NULL")
-                else:
-                    #row[i] is str
-                    values.append("'" + row[i] +  "'")
-            values = ", ".join(values)
-            cur.execute(f"INSERT INTO {table_name}({col_names}) VALUES ({values})")
-            line = line + 1
-    con.commit()
+    try:
+        file = open(path, "r", encoding='utf-8-sig')
+        data = csv.reader(file)
+        line = 0 
+        col_names = ""
+        for row in data:
+            if line == 0:
+                col_names = ", ".join(row)
+                print(col_names)
+                line = line + 1
+            else:
+                values = []
+                for i in range(len(row)):
+                    if row[i].isdigit():
+                        #row[i] is int
+                        values.append(row[i])
+                    elif row[i].replace(".","").replace("-","").isdigit():
+                        #row[i] is float
+                        values.append(row[i])
+                    elif row[i] == None or row[i] == "" or row[i] == "NULL":
+                        #row[i] is null
+                        values.append("NULL")
+                    else:
+                        #row[i] is str
+                        values.append("'" + row[i] +  "'")
+                values = ", ".join(values)
+                cur.execute(f"INSERT INTO {table_name}({col_names}) VALUES ({values})")
+                line = line + 1
+        con.commit()            
+    except FileNotFoundError:
+        print("File not found at", path)
+    except Exception as e:
+        print("insert_csv failed to insert", path, "into table", table_name)
+        print(e)
+        con.rollback()
+    
