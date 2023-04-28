@@ -4,4 +4,4 @@
 *.egg-info/
 .vscode/
 test.py
-build/
+build/*
