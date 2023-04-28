@@ -12,9 +12,9 @@
     - port_name: text, serves as the key, should not be NULL
     - msa_geoid: 5 character string, indicates the geoid of the Metroplitan Statisical Area in which the port is located, NULL if the port is not in an MSA
     - dvrpc, text, equals 'y' if in the dvrpc region, otherwise NULL
-    - x, double precision, longitude of port 
-    - y, double precision, latitude of port 
-- Its purpose is to be a static table (not a dynamic view) that contains all the unique port_names from the port_tonnage table and links each of them to a Metropolitan Statistical Area and whether or not it is included in the dvrpc region. The x and y columns are currenly unused but may be useful for visualizations in the future. 
+    - long, double precision, longitude of port 
+    - lat, double precision, latitude of port 
+- Its purpose is to be a static table (not a dynamic view) that contains all the unique port_names from the port_tonnage table and links each of them to a Metropolitan Statistical Area and whether or not it is included in the dvrpc region. Since the spatial join is performed outside SQL, the lat and long columns are currenly unused but may be useful for visualizations in the future. 
 - The geospatial analysis can be done in ArcPro (or postGIS, etc). The results of the analyis performed in April 2023 are saved on the Freight Planning Google Drive here: Freight Planning\Technical Studies\_FreightData\port_msa_4apr23_final.xlsx
     - The results are saved as an excel file because editing the raw CSV file in Excel can lead to an undetermined issue (probably a character encoding thing).
     - To avoid the issues exporting the results of analysis done in Arc, export the attribute table from ArcPro (you can use your table format of choice, as long as Excel can open it), open the exported table in Excel, immediately save the table as an new xlsx file, then make any nessary manual edits to the xlsx file.
@@ -28,7 +28,7 @@
 - Export the Excel file as a csv and use the insert_csv command to insert the rows into the army_corps.principal_ports table.
 
 ## CLI Commands (note the use of dashes rather than underscores):
-- insert-csv [path] [table_name] - inserts an arbitrary csv file into an exisitng sql table given the path to the csv and the sql table name (including schema name). Used in army_corps.principal_ports procedure. Assumes table and all CSV columns already exist on the server and are of the proper type.
+- insert_principal_ports [path] - inserts a csv file into the army_corps.principal_ports table. Assumes table and all CSV columns already exist on the server, have mathcing names, and are of the proper type.
 - load-port-tonnage [folder] - loops through .xlsx files in the specified directory and inserts the contents into the army_corps.port_tonnage table
 
 

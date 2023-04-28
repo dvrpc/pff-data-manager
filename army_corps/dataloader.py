@@ -36,10 +36,10 @@ def load_tonnage(dir, overwrite=False):
                             ports = pd.read_excel(os.path.join(dir, file), sheet_name=sheetName, header=4)
                             for row in ports.itertuples(name=None):
                                 #sanitizes port names and inserts data into port_tonnage table
-                                cur.execute("""
+                                cur.execute(f"""
                                 INSERT INTO army_corps.port_tonnage(port_name, year, total_tons, domestic_tons, foreign_tons, import_tons, export_tons)
-                                VALUES ('{port_name}', {year}, {total}, {domestic}, {foreign}, {import_tonnage}, {export})
-                                """.format(port_name=row[2].replace("'",""), year=year, total=row[3], domestic=row[4], foreign=row[5], import_tonnage=row[6], export=row[7]))
+                                VALUES ('{row[getPortSheetColumnNumber(ports, "port_name")].replace("'","")}', {year}, {row[getPortSheetColumnNumber(ports, "total")]}, {row[getPortSheetColumnNumber(ports, "domestic")]}, {row[getPortSheetColumnNumber(ports, "foreign")]}, {row[getPortSheetColumnNumber(ports, "import")]}, {row[getPortSheetColumnNumber(ports, "export")]})
+                                """)
                         except Exception as e:
                             print("Failed to load data for", year, "from", os.path.join(dir, file))
                             print(e)
@@ -49,6 +49,41 @@ def load_tonnage(dir, overwrite=False):
                 continue
         #commits changes
         con.commit()
+
+def getPortSheetColumnNumber(portsFrame, colName):
+    if colName == "port_name":
+        for possibleName in ["PORT_NAME"]:
+            if possibleName in portsFrame.columns.to_list():
+                return portsFrame.columns.get_loc(possibleName) + 1
+        return None
+    elif colName == "total":
+        for possibleName in ["TOTAL","GRAND_TOTAL"]:
+            if possibleName in portsFrame.columns.to_list():
+                return portsFrame.columns.get_loc(possibleName) + 1
+        return None
+    elif colName == "domestic":
+        for possibleName in ["DOMESTIC"]:
+            if possibleName in portsFrame.columns.to_list():
+                return portsFrame.columns.get_loc(possibleName) + 1
+        return None
+    elif colName == "foreign":
+        for possibleName in ["FOREIGN","FOREIGN_TOTAL"]:
+            if possibleName in portsFrame.columns.to_list():
+                return portsFrame.columns.get_loc(possibleName) + 1
+        return None
+    elif colName == "import":
+        for possibleName in ["IMPORTS"]:
+            if possibleName in portsFrame.columns.to_list():
+                return portsFrame.columns.get_loc(possibleName) + 1
+        return None
+    elif colName == "export":
+        print(portsFrame.columns.isin(["EXPORTS"])[0])
+        for possibleName in ["EXPORTS"]:
+            if possibleName in portsFrame.columns.to_list():
+                return portsFrame.columns.get_loc(possibleName) + 1
+        return None
+    else:
+        return None
 
 #retrieves the port_codes and port_names for all principal ports from a Bureau of Transportation Statistics REST service and inserts them into the army_corps.principal_ports table 
 """
@@ -123,6 +158,7 @@ def insert_port_geojson(path, year):
         cur.execute(f"INSERT INTO army_corps.principal_ports(port_code, port_name, year, geom) VALUES ('{port_code}', '{port_name}', {year}, '{wkt}')")
     con.commit()
 """
+
 #inserts an arbitrary csv file into an exisitng sql table given the path to the csv and the sql table name (including schema name)
 #TABLE AND COLUMNS MUST ALREADY EXIST 
 #FIRST ROW OF CSV MUST BE A HEADER THAT MATCHES COLUMN NAMES EXACTLY
