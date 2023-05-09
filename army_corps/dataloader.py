@@ -12,8 +12,8 @@ from utils.settings import FREIGHTDB_CONN, CENSUS_API_KEY
 con = psql.connect(FREIGHTDB_CONN)
 cur = con.cursor()
 
-#loops through *.xlsx files in dir and inserts their contents into port_tonnage table
 def load_tonnage(dir, overwrite=False):
+    """load_tonnage(dir, overwrite=False): loops through *.xlsx files in dir and inserts their contents into port_tonnage table"""
     try:
         files = os.listdir(dir)
     except FileNotFoundError:
@@ -35,7 +35,7 @@ def load_tonnage(dir, overwrite=False):
                         try:
                             ports = pd.read_excel(os.path.join(dir, file), sheet_name=sheetName, header=4)
                             for row in ports.itertuples(name=None):
-                                #sanitizes port names and inserts data into port_tonnage table
+                                #sanitizes port names and inserts data into port_tonnage table using getPortSheetColumnNumber to find the proper column in the Excel file
                                 cur.execute(f"""
                                 INSERT INTO army_corps.port_tonnage(port_name, year, total_tons, domestic_tons, foreign_tons, import_tons, export_tons)
                                 VALUES ('{row[getPortSheetColumnNumber(ports, "port_name")].replace("'","")}', {year}, {row[getPortSheetColumnNumber(ports, "total")]}, {row[getPortSheetColumnNumber(ports, "domestic")]}, {row[getPortSheetColumnNumber(ports, "foreign")]}, {row[getPortSheetColumnNumber(ports, "import")]}, {row[getPortSheetColumnNumber(ports, "export")]})
@@ -51,6 +51,8 @@ def load_tonnage(dir, overwrite=False):
         con.commit()
 
 def getPortSheetColumnNumber(portsFrame, colName):
+    """getPortSheetColumnNumber(portsFrame, colName): returns an int representing the column postion of the data specified by colName in the given ports Dataframe
+    Valid colName values: port_name, total, domestic, foreign, import, export"""
     if colName == "port_name":
         for possibleName in ["PORT_NAME"]:
             if possibleName in portsFrame.columns.to_list():
@@ -115,8 +117,8 @@ def load_principal_ports():
         print("Failed to load principal ports")
 """
 
-#loops through possible names and returns the first name that matches a sheet in the specified *xlsx file
 def getPortSheetName(path):
+    """getPortSheetName(path): loops through possible names and returns the first name that matches a sheet in the specified *xlsx file"""
     possibleNames = ["Ports_by_Name", "Port_Name"]
     xlsx = openpyxl.load_workbook(path)
     sheets = xlsx.sheetnames
@@ -125,8 +127,8 @@ def getPortSheetName(path):
             return name
     raise Exception("getPortSheetName was unable to determine the proper sheet name for the workbook {wb}".format(wb=path))
 
-#looks in the specified sheet to find the year
 def getYear(path, sheetName):
+    """getYear(path, sheetName): looks in the specified sheet to find the year"""
     try:
         sheet = openpyxl.load_workbook(path)[sheetName]
         year = sheet["B2"].value
@@ -135,8 +137,8 @@ def getYear(path, sheetName):
     except:
         raise Exception("Error in getYear()")
 
-#checks if data for a year already exists in the port_tonnage table, returns a boolean 
 def yearExists(year):
+    """yearExists(year): checks if data for a year already exists in the port_tonnage table, returns a boolean """
     cur.execute("SELECT EXISTS(SELECT 1 FROM army_corps.port_tonnage WHERE year = %s)", (year,))
     val = cur.fetchone()
     if val[0] == True:
@@ -159,10 +161,11 @@ def insert_port_geojson(path, year):
     con.commit()
 """
 
-#inserts an arbitrary csv file into an exisitng sql table given the path to the csv and the sql table name (including schema name)
-#TABLE AND COLUMNS MUST ALREADY EXIST 
-#FIRST ROW OF CSV MUST BE A HEADER THAT MATCHES COLUMN NAMES EXACTLY
 def insert_csv(path, table_name):
+    """insert_csv(path, table_name): inserts an arbitrary csv file into an exisitng sql table given the path to the csv and the sql table name (including schema name)
+    TABLE AND COLUMNS MUST ALREADY EXIST 
+    FIRST ROW OF CSV MUST BE A HEADER THAT MATCHES COLUMN NAMES EXACTLY
+    """
     try:
         file = open(path, "r", encoding='utf-8-sig')
         data = csv.reader(file)
