@@ -13,6 +13,17 @@ conda env create -f environment.yml
 # activate your conda env
 conda activate pff-data-manager
 ```
+or
+```
+# create python3 venv
+python -m venv pff-data-venv
+
+# activate venv
+pff-data-venv\Scripts\activate
+
+# install dependencies
+pip install -f requirements.txt
+```
 
 ## 2. Configure settings
 
