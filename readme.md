@@ -6,12 +6,16 @@ An internal python toolset for managing datasets behind DVRPC's PhillyFreightFin
 
 This toolset is configured to run in a conda virtual enviroment. To install necessary dependencies and begin using the toolset, create and activate the virtual environment:
 
-```
-# create environment (named pff-data-manager)
-conda env create -f environment.yml
+```cmd
+python -m venv venv
 
-# activate your conda env
-conda activate pff-data-manager
+.\venv\scripts\activate
+```
+
+Install dependencies
+
+```
+pip install -r requirements.txt
 ```
 
 ## 2. Configure settings

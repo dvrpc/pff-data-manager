@@ -1,0 +1,7 @@
+psycopg2
+python-dotenv
+requests
+pandas
+click
+openpyxl==3.1.0
+-e .
